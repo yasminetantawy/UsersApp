@@ -1,0 +1,17 @@
+G:\UsersApp\UsersApp\UsersApp\bin\Release\netstandard2.0\UsersApp.deps.json
+G:\UsersApp\UsersApp\UsersApp\bin\Release\netstandard2.0\UsersApp.dll
+G:\UsersApp\UsersApp\UsersApp\bin\Release\netstandard2.0\UsersApp.pdb
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.csproj.AssemblyReference.cache
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.GeneratedMSBuildEditorConfig.editorconfig
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\App.xaml.g.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\Views\LoginPage.xaml.g.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\Views\MainPage.xaml.g.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\Views\ProfilePage.xaml.g.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\Views\SignupPage.xaml.g.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\Views\UsersPage.xaml.g.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.AssemblyInfoInputs.cache
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.AssemblyInfo.cs
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.csproj.CoreCompileInputs.cache
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\XamlC.stamp
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.dll
+G:\UsersApp\UsersApp\UsersApp\obj\Release\netstandard2.0\UsersApp.pdb

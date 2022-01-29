@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UsersApp.Views.UsersPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#CACDD4">
+    <Frame
+        Margin="10"
+        Padding="0"
+        CornerRadius="15"
+        HasShadow="False">
+        <StackLayout>
+            <StackLayout Background="#F06B68">
+                <Label
+                    Padding="10"
+                    FontSize="17"
+                    HorizontalOptions="Center"
+                    Text="List Of Users"
+                    TextColor="White" />
+            </StackLayout>
+            <SearchBar
+                HeightRequest="60"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center"
+                Placeholder="Search By Name"
+                VerticalOptions="FillAndExpand" />
+
+            <CollectionView x:Name="UsersCollectionView" ItemsSource="{Binding UsersList}">
+                <CollectionView.EmptyView>
+                    <Label
+                        HorizontalOptions="CenterAndExpand"
+                        Text="There is no data to be displayed"
+                        VerticalOptions="CenterAndExpand" />
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BindingContext.UserSelectedCommand, Source={x:Reference UsersCollectionView}}" CommandParameter="{Binding .}" />
+                            </StackLayout.GestureRecognizers>
+                            <StackLayout
+                                Padding="25,10"
+                                Orientation="Horizontal"
+                                Spacing="15">
+                                <Frame
+                                    Padding="0"
+                                    CornerRadius="30"
+                                    HasShadow="False">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        Source="{Binding avatar}"
+                                        WidthRequest="60" />
+                                </Frame>
+                                <StackLayout VerticalOptions="Center">
+                                    <Label
+                                        FontSize="Large"
+                                        Text="{Binding FullName}"
+                                        TextColor="#26496B" />
+                                    <Label Text="{Binding email}" TextColor="#26496B" />
+                                </StackLayout>
+
+                            </StackLayout>
+                            <BoxView BackgroundColor="#EEEEEE" HeightRequest="3" />
+
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+    </Frame>
+</ContentPage>

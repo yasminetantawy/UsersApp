@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UsersApp.Views.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#CACDD4">
+    <Frame
+        Margin="15"
+        CornerRadius="15"
+        HasShadow="False">
+        <StackLayout Padding="15">
+            <Grid>
+                <Image
+                    HeightRequest="50"
+                    HorizontalOptions="Start"
+                    Source="LeftArrow.png"
+                    VerticalOptions="Center"
+                    WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="Personal Data"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </Grid>
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="120"
+                HorizontalOptions="Center"
+                Source="{Binding SelectedUser.avatar}"
+                WidthRequest="120" />
+            <Label Text="Email" />
+            <Frame
+                BackgroundColor="#F1F3FD"
+                BorderColor="#EAEAEC"
+                CornerRadius="10"
+                HasShadow="False">
+                <Label Text="{Binding SelectedUser.email}" />
+            </Frame>
+            <Label Text="Full Name" />
+            <Frame
+                BackgroundColor="#F1F3FD"
+                BorderColor="#EAEAEC"
+                CornerRadius="10"
+                HasShadow="False">
+                <Label Text="{Binding SelectedUser.FullName}" />
+            </Frame>
+
+        </StackLayout>
+    </Frame>
+</ContentPage>

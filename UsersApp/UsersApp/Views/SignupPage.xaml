@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UsersApp.Views.SignupPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Conv="clr-namespace:UsersApp.Converters"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#CACDD4">
+    <ScrollView>
+        <Frame
+            Margin="15"
+            CornerRadius="30"
+            HasShadow="False">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image HeightRequest="100" Source="https://cdn-icons-png.flaticon.com/512/2037/2037710.png" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="Signup"
+                    TextColor="Black" />
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label
+                        FontSize="Medium"
+                        Text="Email"
+                        TextColor="Black" />
+                    <Entry
+                        Keyboard="Email"
+                        Placeholder="Email"
+                        Text="{Binding Email.Value}">
+                        <Entry.Behaviors>
+                            <prism:EventToCommandBehavior Command="{Binding ValidateEmailCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        IsVisible="{Binding Email.IsValid, Converter={Conv:InverseBooleanConverter}}"
+                        Text="{Binding Email.ErrorMsg}"
+                        TextColor="Red" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Mobile Number"
+                        TextColor="Black" />
+                    <Entry
+                        Keyboard="Numeric"
+                        Placeholder="Mobile Number"
+                        Text="{Binding MobileNumber.Value}">
+                        <Entry.Behaviors>
+                            <prism:EventToCommandBehavior Command="{Binding ValidateMobileNumberCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        IsVisible="{Binding MobileNumber.IsValid, Converter={Conv:InverseBooleanConverter}}"
+                        Text="{Binding MobileNumber.ErrorMsg}"
+                        TextColor="Red" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Password"
+                        TextColor="Black" />
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="Password"
+                        Text="{Binding Password.Value}">
+                        <Entry.Behaviors>
+                            <prism:EventToCommandBehavior Command="{Binding ValidatePasswordCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        IsVisible="{Binding Password.IsValid, Converter={Conv:InverseBooleanConverter}}"
+                        Text="{Binding Password.ErrorMsg}"
+                        TextColor="Red" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Confirm Password"
+                        TextColor="Black" />
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="Confirm Password"
+                        Text="{Binding ConfirmPassword.Value}">
+                        <Entry.Behaviors>
+                            <prism:EventToCommandBehavior Command="{Binding ValidateConfirmPasswordCommand}" EventName="TextChanged" />
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label
+                        IsVisible="{Binding ConfirmPassword.IsValid, Converter={Conv:InverseBooleanConverter}}"
+                        Text="{Binding ConfirmPassword.ErrorMsg}"
+                        TextColor="Red" />
+                    <Label
+                        FontSize="Medium"
+                        Text="Date Of Birth"
+                        TextColor="Black" />
+                    <DatePicker Date="{Binding DateOfBirth}" />
+                </StackLayout>
+                <Button
+                    BackgroundColor="#5F266D"
+                    Command="{Binding NavigateToUsersPageCommand}"
+                    CornerRadius="15"
+                    IsEnabled="{Binding IsSignupButtonEnabled}"
+                    Text="Signup"
+                    TextColor="White"
+                    WidthRequest="80" />
+            </StackLayout>
+        </Frame>
+
+    </ScrollView>
+
+</ContentPage>
